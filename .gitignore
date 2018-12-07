@@ -1,0 +1,7 @@
+.DS_STORE
+.idea/
+__pycache__/
+*.py[cod]
+*.pyc
+.vscode/
+pystack_cli.egg-info/

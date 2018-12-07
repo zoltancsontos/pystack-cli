@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${data.title}</title>
+        <link rel="stylesheet" href="/assets/css/python.angular.stack.css" />
+    </head>
+    <body class="login">
+        <div class="wrapper">
+            <img class="app-logo" src="/assets/images/pystack-logo.svg" alt="PyStack - full stack python framework" />
+            <form id="login-form" action="#">
+                <h1>${data.text}</h1>
+                <small class="message hide"></small>
+                <fieldset>
+                    <label>Email</label>
+                    <input type="text" name="email" id="email" placeholder="email" />
+                </fieldset>
+                <fieldset>
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" placeholder="password" />
+                </fieldset>
+                <fieldset>
+                    <input type="submit" value="sign in" id="sign-in" />
+                </fieldset>
+            </form>
+        </div>
+        <script src="/assets/js/user-services.js"></script>
+        <script>
+            (function () {
+                let handler = new UserServices();
+            }());
+        </script>
+    </body>
+</html>
