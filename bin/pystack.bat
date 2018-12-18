@@ -18,6 +18,12 @@ IF "%COMMAND%"=="create" (
         cd %NAME%
         pip3 install -r requirements.txt
         rm -rf .git
+        ECHO.
+        ECHO =================================================
+        ECHO             New PyStack app created
+        ECHO                 App path: ${PWD}
+        ECHO =================================================
+        ECHO.
         GOTO exit
     ) ELSE (
         IF EXIST "%CURRENT_INSTALLATION_FILE%" GOTO ForwardToPyStack
