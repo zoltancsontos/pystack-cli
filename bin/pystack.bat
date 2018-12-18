@@ -21,7 +21,7 @@ IF "%COMMAND%"=="create" (
         ECHO.
         ECHO =================================================
         ECHO             New PyStack app created
-        ECHO                 App path: ${PWD}
+        ECHO App path: %cd%
         ECHO =================================================
         ECHO.
         GOTO exit

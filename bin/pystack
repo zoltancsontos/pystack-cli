@@ -67,7 +67,7 @@ then
         pip3 install -r requirements.txt
         echo ""
         echo "================================================="
-        echo "New PyStack app created"
+        echo "             New PyStack app created"
         echo "App path:" ${PWD}
         echo "================================================="
         echo ""
