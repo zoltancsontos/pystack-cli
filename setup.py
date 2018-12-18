@@ -20,7 +20,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     scripts=[
-        'bin\pystack-cli.bat',
-        'bin\pystack-cli'
+        'bin\pystack.bat',
+        'bin\pystack'
     ]
 )

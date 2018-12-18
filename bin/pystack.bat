@@ -35,10 +35,10 @@ IF "%COMMAND%"=="help" (
     ECHO.
     ECHO List of CLI options:
     ECHO.
-    ECHO pystack-cli create app appName - creates a new pystack application with the specified name
-    ECHO pystack-cli run --port=port - runs the application on the specified port
-    ECHO pystack-cli create page PageName page-url - creates a page
-    ECHO pystack-cli create resource ResourceName resource-url - creates a standard rest api
+    ECHO pystack create app appName - creates a new pystack application with the specified name
+    ECHO pystack run --port=port - runs the application on the specified port
+    ECHO pystack create page PageName page-url - creates a page
+    ECHO pystack create resource ResourceName resource-url - creates a standard rest api
     ECHO.
 ) ELSE (
     GOTO MissingArgument
