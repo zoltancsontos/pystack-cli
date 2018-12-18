@@ -1,5 +1,6 @@
 import setuptools
 
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -18,5 +19,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    scripts=['bin\pystack-cli']
+    scripts=[
+        'bin\pystack-cli.bat',
+        'bin\pystack-cli'
+    ]
 )

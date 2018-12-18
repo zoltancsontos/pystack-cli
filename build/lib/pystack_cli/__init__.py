@@ -1,1 +1,0 @@
-name = "pystack_cli"
