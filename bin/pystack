@@ -62,9 +62,14 @@ then
 	if [ "${TYPE}" == "app" ]
 	then
 		git clone $GIT_REPOSITORY
-        cd ${NAME}
+        cd $NAME
         rm -rf .git
-        return
+        pip3 install -r requirements.txt
+        echo "================================================="
+        echo "New PyStack app created"
+        echo "App path:" ${PWD}
+        echo "================================================="
+        exec
     # Forwards to pystack after validation
 	else
 		if [[ "${TYPE}" == "page" || "${TYPE}" == "resource" ]]
