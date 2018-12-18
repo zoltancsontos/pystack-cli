@@ -66,10 +66,10 @@ then
         rm -rf .git
         pip3 install -r requirements.txt
         echo ""
-        echo "================================================="
-        echo "             New PyStack app created"
+        echo "=========================================================================="
+        echo "                        New PyStack app created"
         echo "App path:" ${PWD}
-        echo "================================================="
+        echo "=========================================================================="
         echo ""
         exec
     # Forwards to pystack after validation

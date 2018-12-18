@@ -19,10 +19,10 @@ IF "%COMMAND%"=="create" (
         pip3 install -r requirements.txt
         rm -rf .git
         ECHO.
-        ECHO =================================================
-        ECHO             New PyStack app created
+        ECHO ==========================================================================
+        ECHO                        New PyStack app created
         ECHO App path: %cd%
-        ECHO =================================================
+        ECHO ==========================================================================
         ECHO.
         GOTO exit
     ) ELSE (
