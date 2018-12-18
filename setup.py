@@ -13,8 +13,6 @@ if is_windows:
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
-print(script_paths)
-
 setuptools.setup(
     name='pystack_cli',
     version='1.0.0',

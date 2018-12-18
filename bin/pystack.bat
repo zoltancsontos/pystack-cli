@@ -16,6 +16,7 @@ IF "%COMMAND%"=="create" (
     IF "%TYPE%"=="app" (
         git clone %GIT_REPOSITORY%
         cd %NAME%
+        pip3 install -r requirements.txt
         rm -rf .git
         GOTO exit
     ) ELSE (
@@ -50,7 +51,7 @@ IF "%COMMAND%"=="help" (
             IF NOT "%URL%" == "none" (
                 ECHO Creating new %TYPE% called %NAME%, accessible on: %URL%
                 python pystack.py %*
-                goto exit
+                GOTO exit
             )
         )
     )
