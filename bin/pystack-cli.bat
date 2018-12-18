@@ -1,4 +1,4 @@
-@echo off
+@ECHO OFF
 
 SET PORT=3571
 SET COMMAND=%1
@@ -6,35 +6,64 @@ SET TYPE=%2
 SET NAME=%3
 SET URL=%4
 SET GIT_REPOSITORY="https://github.com/zoltancsontos/pystack-framework.git" %NAME%
+SET CURRENT_INSTALLATION_FILE=%cd%\pystack.py
 
 IF NOT DEFINED COMMAND (SET COMMAND=help)
+IF NOT DEFINED URL (SET URL=none)
+IF NOT DEFINED NAME (SET NAME=none)
 
 IF "%COMMAND%"=="create" (
     IF "%TYPE%"=="app" (
         git clone %GIT_REPOSITORY%
         cd %NAME%
         rm -rf .git
-        goto exit
+        GOTO exit
     ) ELSE (
-        python pystack.py %*
+        IF EXIST "%CURRENT_INSTALLATION_FILE%" GOTO ForwardToPyStack
+        REM ELSE GOTO PackageNotInstalled
     )
 )
 IF "%COMMAND%"=="run" (
    python pystack.py %*
+   GOTO exit
 )
 IF "%COMMAND%"=="help" (
-    echo.
-    echo ==========================================================================================
-    echo                              PyStack Framework v1.0
-    echo ==========================================================================================
-    echo.
-    echo List of CLI options:
-    echo.
-    echo pystack-cli create app appName - creates a new pystack application with the specified name
-    echo pystack-cli run --port=port - runs the application on the specified port
-    echo pystack-cli create page PageName page-url - creates a page
-    echo pystack-cli create resource ResourceName resource-url - creates a standard rest api
-    echo.
+    ECHO.
+    ECHO ==========================================================================================
+    ECHO                              PyStack Framework v1.0
+    ECHO ==========================================================================================
+    ECHO.
+    ECHO List of CLI options:
+    ECHO.
+    ECHO pystack-cli create app appName - creates a new pystack application with the specified name
+    ECHO pystack-cli run --port=port - runs the application on the specified port
+    ECHO pystack-cli create page PageName page-url - creates a page
+    ECHO pystack-cli create resource ResourceName resource-url - creates a standard rest api
+    ECHO.
+) ELSE (
+    GOTO MissingArgument
 )
+
+:ForwardToPyStack
+    IF "%TYPE%" == "page" OR "%TYPE%" == "resource" (
+        IF NOT "%NAME%" == "none" (
+            IF NOT "%URL%" == "none" (
+                ECHO Creating new %TYPE% called %NAME%, accessible on: %URL%
+                python pystack.py %*
+                goto exit
+            )
+        )
+    )
+    GOTO :MissingArgument
+
+:MissingArgument
+    ECHO.
+    ECHO ERROR: Missing or misspelled mandatory argument
+    GOTO exit
+
+:PackageNotInstalled
+    ECHO.
+    ECHO ERROR: Not a PyStack application
+    GOTO exit
 
 :exit
