@@ -3,7 +3,7 @@
 PyStack micro-framework command line interface.
 
 #### Installation:
-```pip install pystack-cli```
+```pip install pystack_cli```
 
 #### Usage
 * Create a new PyStack application:
