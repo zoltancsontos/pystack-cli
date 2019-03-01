@@ -108,5 +108,4 @@ else
     echo "pystack create page PageName page-url - creates a page"
     echo "pystack create resource ResourceName resource-url - creates a standard rest api"
     echo ""
-    return
 fi
