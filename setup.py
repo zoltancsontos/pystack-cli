@@ -2,20 +2,16 @@ import setuptools
 import sys
 
 script_paths = [
-    'bin/pystack'
+    'bin\pystack.bat',
+    'bin\pystack'
 ]
-is_windows = hasattr(sys, 'getwindowsversion')
-if is_windows:
-    script_paths = [
-        'bin\pystack.bat'
-    ]
 
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name='pystack_cli',
-    version='1.0.0',
+    version='1.0.2',
     author='Zoltan Csontos',
     author_email='zoltan.csontos.dev@gmail.com',
     description='PyStack micro-framework command line interface',
